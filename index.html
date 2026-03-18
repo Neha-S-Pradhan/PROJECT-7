@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Disaster Tweet Classifier</title>
+    <style>
+        body {
+            font-family: Arial;
+            text-align: center;
+            margin-top: 80px;
+            background-color: #f4f4f4;
+        }
+
+        textarea {
+            width: 400px;
+            height: 120px;
+            padding: 10px;
+            font-size: 14px;
+        }
+
+        button {
+            padding: 10px 20px;
+            margin-top: 10px;
+            background-color: #28a745;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+
+        .result {
+            margin-top: 20px;
+            font-size: 22px;
+            font-weight: bold;
+        }
+    </style>
+</head>
+
+<body>
+
+    <h1>🚨 Disaster Tweet Classifier</h1>
+
+    <form method="POST">
+        <textarea name="tweet" placeholder="Enter tweet here...">{{ user_text }}</textarea><br>
+        <button type="submit">Predict</button>
+    </form>
+
+    {% if prediction %}
+        <div class="result">
+            {{ prediction }}
+        </div>
+    {% endif %}
+
+</body>
+</html>
